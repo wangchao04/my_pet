@@ -1,0 +1,40 @@
+.f12{
+  font-size: 12px;
+}
+.f14{
+  font-size: 14px;
+}
+.f15{
+  font-size: 15px;
+}
+.round5 {
+  border-radius: 5px;
+}
+.bgfff {
+  background: #fff;
+}
+.cred {
+  color: red;
+}
+.pl5 {
+  padding-left: 5px;
+}
+.pr5 {
+  padding-right: 5px;
+}
+.ml5 {
+  margin-left: 5px;
+}
+.mr5 {
+  margin-right: 5px;
+}
+.bold {
+  font-weight: 700;
+}
+.ftc {
+  text-align: center;
+}
+.cfff{
+  color: #ffffff;
+}
+
