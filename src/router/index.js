@@ -13,6 +13,7 @@ import yiliao from '../components/yiliao/yiliao.vue'
 import lingshi from '../components/lingshi/lingshi.vue'
 import meirong from '../components/meirong/meirong.vue'
 
+import zhuce from '../components/zhuce/zhuce.vue'
 
 
 
@@ -65,7 +66,11 @@ export default new Router({
     },
     {
       path:'/myPet',
-      component:myPet
+      component:myPet,
+      children:[{
+        path:'/zhuce',
+        component:zhuce,
+      }]
     },
   ]
 })

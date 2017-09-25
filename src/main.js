@@ -6,10 +6,15 @@ import router from './router'
 import './common/css/reset.css'
 import VueScroller from 'vue-scroller'
 
+
 import { Swipe, SwipeItem } from 'mint-ui';
 import { Navbar, TabItem } from 'mint-ui';
 import { TabContainer, TabContainerItem } from 'mint-ui';
+import { Field } from 'mint-ui';
+import { Lazyload } from 'mint-ui';
 
+Vue.use(Lazyload);
+Vue.component(Field.name, Field);
 Vue.component(TabContainer.name, TabContainer);
 Vue.component(TabContainerItem.name, TabContainerItem);
 Vue.component(Navbar.name, Navbar);

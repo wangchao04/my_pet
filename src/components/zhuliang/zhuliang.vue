@@ -11,54 +11,79 @@
         </div>
         <xline></xline>
         <div class="switch">
-          <div class="switchable">
-            <ul>
-              <li>
-                <img src="./jinkou-a.jpg" alt="">
-              </li>
-              <li>
-                <img src="./guochan.jpg" alt="">
-              </li>
-              <li>
-                <img src="./kouwei.jpg" alt="">
-              </li>
-              <li>
-                <img src="./danjin.jpg" alt="">
-              </li>
-            </ul>
-          </div>
-          <div class="switchContent">
-            <div class="switchItem">
-              <a href="#">
-                <img src="./you.jpg" alt="">
-              </a>
-            </div>
-            <div class="switchItem">
-              <a href="#">
-                <img src="./cheng.jpg" alt="">
-              </a>
-            </div>
-            <div class="switchItem">
-              <a href="#">
-                <img src="./quan.jpg" alt="">
-              </a>
-            </div>
-            <div class="switchItem">
-              <a href="#">
-                <img src="./lao.jpg" alt="">
-              </a>
-            </div>
-            <div class="switchItem">
-              <a href="#">
-                <img src="./yun.jpg" alt="">
-              </a>
-            </div>
-            <div class="switchItem">
-              <a href="#">
-                <img src="./qita.jpg" alt="">
-              </a>
-            </div>
-          </div>
+          <mt-navbar class="switchable" v-model="selected">
+            <mt-tab-item id="1"><img src="./jinkou-a.jpg" alt=""></mt-tab-item>
+            <mt-tab-item id="2"><img src="./guochan.jpg" alt=""></mt-tab-item>
+            <mt-tab-item id="3"><img src="./kouwei.jpg" alt=""></mt-tab-item>
+            <mt-tab-item id="4">  <img src="./danjin.jpg" alt=""></mt-tab-item>
+          </mt-navbar>
+          <!-- tab-container -->
+          <mt-tab-container class="switchItemWipe" v-model="selected">
+            <mt-tab-container-item id="1">
+              <ul class="switchContent">
+                <li class="switchItem">
+                  <a href="#">
+                    <img src="./you.jpg" alt="">
+                  </a>
+                </li>
+                <li class="switchItem">
+                  <a href="#">
+                    <img src="./cheng.jpg" alt="">
+                  </a>
+                </li>
+                <li class="switchItem">
+                  <a href="#">
+                    <img src="./quan.jpg" alt="">
+                  </a>
+                </li>
+                <li class="switchItem">
+                  <a href="#">
+                    <img src="./lao.jpg" alt="">
+                  </a>
+                </li>
+                <li class="switchItem">
+                  <a href="#">
+                    <img src="./yun.jpg" alt="">
+                  </a>
+                </li>
+                <li class="switchItem">
+                  <a href="#">
+                    <img src="./qita.jpg" alt="">
+                  </a>
+                </li>
+              </ul>
+            </mt-tab-container-item>
+            <mt-tab-container-item id="2">
+              <ul class="switchContent">
+                <li class="switchItem">
+                  <a href="#">
+                    <img src="./2-1.jpg" alt="">
+                  </a>
+                </li>
+
+              </ul>
+            </mt-tab-container-item>
+            <mt-tab-container-item id="3">
+              <ul class="switchContent">
+                <li class="switchItem">
+                  <a href="#">
+                    <img src="./2-2.jpg" alt="">
+                  </a>
+                </li>
+
+              </ul>
+            </mt-tab-container-item>
+            <mt-tab-container-item id="4">
+              <ul class="switchContent">
+                <li class="switchItem">
+                  <a href="#">
+                    <img src="./2-3.jpg" alt="">
+                  </a>
+                </li>
+
+              </ul>
+            </mt-tab-container-item>
+          </mt-tab-container>
         </div>
         <xline></xline>
         <div class="boxImg">
@@ -180,6 +205,12 @@
   import BScroll from 'better-scroll'
 
   export default {
+    data(){
+      return{
+        selected:'1',
+
+      }
+    },
 
     components: {
       xline
@@ -206,26 +237,29 @@
 
       .swipeWiper
         .swipeWiper2
-          height 230px
+          height 190px
           img
             width:100%;
             height:100%;
       .switch
         overflow hidden
         .switchable
-          ul
-            display flex
-            li
-              flex 1
+          flex 1
+          img
+            width 100%
+          .is-selected
+            border none
+        .mint-navbar .mint-tab-item
+          padding 0
+
+        .switchItemWipe
+          .switchContent
+            .switchItem
+              width 33.33%
+              float left
               img
-                width: 100%;
-        .switchContent
-          .switchItem
-            float left
-            width 33.33%
-            img
-              width 100%
-              display block
+                width 100%
+
       .boxImg
         height 100%
         overflow hidden

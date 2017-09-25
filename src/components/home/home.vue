@@ -1,13 +1,17 @@
 <template>
   <div>
+
+      <selectCity v-show="cityShow" :showCity1="showCity" ref="child"></selectCity>
+
+
     <div class="header">
         <div class="search">
           <div class="location">
-            <a href="#">
+            <div @click="showCity(true)">
               <span class="f14">猫猫站</span>
               <span>|</span>
-              <span class="f12">重庆</span><i></i>
-            </a>
+              <span class="f12" v-if="city">{{city}}</span><i></i>
+            </div>
           </div>
           <div class="search-epet">
             <a href="#">
@@ -46,8 +50,16 @@
 </template>
 
 <script>
+  import selectCity from '../selectCity/selectCity.vue'
   import BScroll from 'better-scroll'
   export default {
+    data(){
+      return{
+        cityShow:false,
+        city:''
+      }
+
+    },
     mounted () {
       this.$nextTick(() => {
         this.initScroll ()
@@ -61,13 +73,27 @@
           scrollX: true,
           bounce: false
         })
-      }
-    },
+      },
+      showCity(isShow){
+       this.cityShow=isShow
+        this.city=this.$refs.child.select1.area.value
 
+      },
+
+    },
+    components: {
+      selectCity
+    }
   }
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
+  .fade-enter-active, .fade-leave-active {
+    transition: all 0.5s
+  }
+  .fade-enter, .fade-leave-to  {
+    transform: translateY(-100%);
+  }
   .header
     z-index 300
     width 100%
